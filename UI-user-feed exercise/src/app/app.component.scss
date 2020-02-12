@@ -1,0 +1,82 @@
+p {
+  font-family: Lato;
+}
+table {
+  width: 100%;
+  border: 1px solid #d8d8d8;
+  padding:0px;
+  border-spacing: 0px;
+  margin: 10px 0 0 0;
+  caption {
+    margin: 10px 0;
+    font-family: Lato;
+  }
+  tr {
+    text-align: left;
+    margin-bottom:10px;
+    width: 100%;
+    padding: 0px;
+    display: inline-block;
+    
+    td, th {
+      font-size: 14px;
+      width: 50%;
+      border-top: 1px solid #d8d8d8;
+      margin:0px;
+      padding:0px 10px;
+      font-family: Lato;
+    }
+    th {
+      border:0px;
+    }
+  }
+}
+.feed-icon-like {
+  width: 20px;
+  cursor: pointer;
+}
+.add-feed-btn {
+  border: 1px solid #d8d8d8;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: Lato;
+  margin: 15px 0 0 0;
+  float: left;
+  cursor: pointer;
+  font-size: 14px;
+}
+.add-feed-outer-container {
+  width: 100%;
+  float: left;
+  margin: 15px 0 0 0;
+  font-family: Lato;
+  .form-group {
+    float: left;
+    margin-bottom: 15px;
+    width: 100%;
+    label {
+      width: 100%;
+      float: left;
+      font-size: 14px;
+    }
+    input {
+      padding: 5px 10px;
+      height: 15px;
+      float: left;
+      min-width: 150px;
+    }
+    .add-feed-form-button {
+      font-size: 14px;
+      font-family: Lato;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    .invalid-feedback {
+      font-size: 12px;
+      color: red;
+      font-family: Lato;
+      width: 100%;
+      float: left;
+    }
+  }
+}

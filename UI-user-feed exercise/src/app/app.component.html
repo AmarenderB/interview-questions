@@ -1,0 +1,41 @@
+<!-- Button to show or add the feeds -->
+<span (click)="addFeed()" class="add-feed-btn">{{toggleFeedTitle}}</span>
+<!-- Table to show the feeds -->
+<table *ngIf="!showForm">
+	<caption>Total Feeds: {{userFeeds.feed.length}}</caption>
+	<tr>
+		<th>Feed</th>
+		<th>Likes</th>
+		<th>&nbsp;</th>
+	</tr>
+	<tr *ngFor="let feed of userFeeds.feed">
+		<td>{{feed.value}}</td>
+		<td>{{feed.likes}}</td>
+		<td><span (click)="feed.likes = feed.likes + 1">
+      <img src="https://img.icons8.com/pastel-glyph/64/000000/facebook-like.png" class="feed-icon-like"></span></td>
+	</tr>
+</table>
+<!-- Add the feed Form -->
+<div *ngIf="showForm" class="add-feed-outer-container">
+	<form [formGroup]="addFeedForm" (ngSubmit)="addNewFeed()">
+		<div class="form-group">
+			<label>Feed Description</label>
+			<input type="text" formControlName="feedName" class="form-control" [ngClass]="{ 'is-invalid': addFeedFormSubmitted && f.feedName.errors }" />
+      <!-- condition to check whether the input is valid or not -->
+			<div *ngIf="addFeedFormSubmitted && f.feedName.errors" class="invalid-feedback">
+				<div *ngIf="f.feedName.errors.required">Feed Description is required</div>
+			</div>
+		</div>
+    <div class="form-group">
+			<label>Feed User Name</label>
+			<input type="text" formControlName="feedUser" class="form-control" [ngClass]="{ 'is-invalid': addFeedFormSubmitted && f.feedUser.errors }" />
+      <!-- condition to check whether the input is valid or not -->
+			<div *ngIf="addFeedFormSubmitted && f.feedUser.errors" class="invalid-feedback">
+				<div *ngIf="f.feedUser.errors.required">Feed Username is required</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<button class="btn btn-primary add-feed-form-button">Add Feed</button>
+		</div>
+	</form>
+</div>
